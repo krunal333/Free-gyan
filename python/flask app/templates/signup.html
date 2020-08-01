@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Free Gyan
+    </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sign_style.css') }}">
+</head>
+<body>
+    <div class="signup">
+        <h1>Free Gyan</h1>
+    <form action="" method="POST">
+        <div class="textbox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            {{ form.name(size=32) }}
+    
+           
+        </div>
+        <div class="textbox">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            {{ form.email }}    
+        </div>
+        <div class="textbox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            {{ form.username(size=20) }}   
+        </div>
+        <div class="textbox">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            {{ form.password(size=32) }}    
+        </div>
+        
+        {{ form.submit() }}
+
+    </form>
+    </div>
+</body>

@@ -1,0 +1,69 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    font-family: Montserrat;
+    
+}
+.fas
+{
+	padding-right: 2%;
+	font-size: 1.5rem;
+
+}
+.navbar
+{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.nav-link
+{
+	font-size: 20;
+}
+.navbar
+{
+	font-weight: 30px;
+}
+.row
+{
+
+	padding-top: 5%;
+	
+}
+section
+{
+	background-image: url("../image/background1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#logo
+{
+ 	font-size: 2.5rem;
+ 	padding-bottom: 4%;
+ 	padding-left: 7.5%;
+}
+#log
+{
+	padding-right:7%;
+}
+.col-sm-3
+{
+	padding-top: 2%;
+}
+.fa-hover{
+    
+    
+    cursor:pointer;
+    -webkit-transition: color 0.4s, transform 0.4s;
+    transition: color 0.4s, transform 0.4s;
+}
+
+.fa-hover:hover{
+    
+    transform: scale(1.2);
+}
+
+
+

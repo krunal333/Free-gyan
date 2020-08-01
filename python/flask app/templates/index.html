@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+    <title>
+        free gyan at home
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="raw">
+
+            {% for course in course %}
+            {% if course.source=="Coursera" %}
+            <div class="card card-list-style">
+                <a class="link" href={{course.link}} class="first-hidden">
+                    <div class="card-content">
+                        <div class="col-xs-4 col-sm-2 image-column">
+                            <div class="image-style">
+                                {% if course.cover=="" %}
+                                <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/a1/fd9a9b0f404af6842d49aad8cf141a/Andrew-WA-Thompson-699-1-.jpg?auto=format%2Ccompress&dpr=1&w=150&h=150&fit=fill&bg=FFF"
+                                    height="150px" width="150px">
+                                {% else %}
+                                <img src={{course.cover}} height="150px" width="150px">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-xs-8 vertical-box">
+                            <div class="author-info">
+
+                                <p>
+                                    <span>
+                                        <b>{{course.name}}</b><span class="size"> with {{course.university}} </span>
+                                    </span>
+                                </p>
+                                <div>
+                                    Enrolled Students : {{course.enrolled_students}}
+                                </div>
+                                <div>
+                                    <span>Rating : {{course.rating}}</span>
+                                    <span class="rating">From : {{ "{:,}".format(course.rating_count) }}</span>
+                                </div>
+
+                                <div>
+                                    <span>Level : {{course.level}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% else %}
+            <div class="card card-list-style">
+                <a class="link" href="{{course.link}}" class="first-hidden">
+                    <div class="card-content">
+                        <div class="col-xs-4 col-sm-3 image-column">
+                            <div class="image-style">
+                                {% if course.cover=="" %}
+                                <img src="https://cdn.lynda.com/courses/2812129-637286277086927950_270x480_thumb.jpg"
+                                    height="158" width="280">
+                                {% else %}
+                                <img src={{course.cover}} height="158" width="280">
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-xs-8 vertical-box">
+                            <div class="author-info">
+                                <div class="catagory">{{course.category}}</div>
+                                <p>
+                                    <span>
+                                        <b>{{course.name}}</b><span class="size"> with {{course.author_name}} </span>
+                                    </span>
+                                </p>
+                                <div class="discription">
+                                    {{course.course_description}}
+                                </div>
+                                <div class="meta">
+                                    {%if course.time//3600 %}
+                                    <span>{{(course.time//3600)}}h {{(course.time%3600/60)|int}}m</span>
+                                    {% else %}
+                                    <span>{{(course.time%3600/60)|int}}m</span>
+                                    {% endif %}
+                                    <span class="meta-level">Level : {{course.level}}</span>
+                                    <span class="meta-views"> Views : {{ "{:,}".format(course.views) }}</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="{{((page)|int)-1}}">Previous</a>
+                    </li>
+
+                    {% for i in range (1,((pages/10)|int)) %}
+                    {% if i < (page|int)+5 %}
+                    <li class="page-item"><a class="page-link" href="/home/{{source}}/{{topic}}/{{i}}">{{i}}</a></li>
+                    {% endif %}
+
+                    {% endfor %}
+                    <li class="page-item"><a class="page-link" href="{{(page|int)+6}}">{{'...'}}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{(pages/10)|int}}">{{(pages/10)|int}}</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="{{((page)|int)+1}}">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</body>
+
+</html>
