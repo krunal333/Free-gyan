@@ -1,0 +1,52 @@
+form{
+    
+    margin: auto;
+    
+    
+}
+input{
+    width: 1000px;
+}
+.heading-container{
+    background-image: url(image6.jpg);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    position: relative;
+    height: 400px;
+    padding-top: 5%;
+    
+}
+.page-content{
+    padding-top:10px;
+}
+.heading-block{
+    color: white;
+    max-width: 1000px;
+  
+}
+.size{
+    margin-bottom: 20px;
+
+}
+.form-inline{
+    width: 50%;
+}
+.description{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: large;
+}
+.container{
+    height: 500px;
+}
+
+.card-deck{
+    margin-top: 20px;
+}
+.card{
+    height: auto;
+}
