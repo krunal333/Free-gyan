@@ -73,3 +73,42 @@ div{
 nav {
     padding: 10px;
 }
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+.container-1{
+    background-color:grey ; 
+     height:100 ;
+    margin-top: 10px ;
+}
+#sorting-1{
+    padding-left: 190px;
+    padding-bottom: 10px;
+    color: ivory;
+}
+#sorting-2{
+    padding-right: 10px ;
+    padding-left: 190px;
+}
+#size{
+    padding-right: 80px;
+}
+#foter{
+    background-color:#F5F5F5;
+    /* border-top:solid;
+    border-color:gray; */
+    padding-left: 60px;
+    padding-top: 20px;
+}
+#log
+{
+	padding-right:7%;
+}
+#logo
+{
+ 	font-size: 2.5rem;
+ 	padding-bottom: 4%;
+ 	padding-left: 7.5%;
+}

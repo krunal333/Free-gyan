@@ -4,29 +4,47 @@
     <title>
         Free Gyan
     </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sign_style.css') }}">
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="/index">FreeGyan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03"
+            aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+    </nav>
+    
     <div class="signup">
         <h1>Free Gyan</h1>
     <form action="" method="POST">
         <div class="textbox">
             <i class="fa fa-user" aria-hidden="true"></i>
-            {{ form.name(size=32) }}
+            {{ form.name(size=32,placeholder="name") }}
     
            
         </div>
         <div class="textbox">
             <i class="fa fa-envelope" aria-hidden="true"></i>
-            {{ form.email }}    
+            {{ form.email(placeholder="email") }}    
         </div>
         <div class="textbox">
             <i class="fa fa-user" aria-hidden="true"></i>
-            {{ form.username(size=20) }}   
+            {{ form.username(size=20,placeholder="username") }}   
         </div>
         <div class="textbox">
             <i class="fa fa-lock" aria-hidden="true"></i>
-            {{ form.password(size=32) }}    
+            {{ form.password(size=32,placeholder="password") }}    
         </div>
         
         {{ form.submit() }}
